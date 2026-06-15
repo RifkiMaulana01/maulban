@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigaTread - Toko Ban Modern & Bergaransi</title>
+    <!-- Menghubungkan langsung ke file style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGASI / MENU ATAS -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">GIGA<span>TREAD</span></div>
+            <div class="menu-links">
+                <a href="#">Beranda</a>
+                <a href="#produk">Katalog Ban</a>
+            <a href="#kontak">Hubungi Kami</a>
+            </div>
+            <div>
+                <a href="#kontak" class="btn-nav">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER UTAMA (HERO SECTION) -->
+    <header>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="tagline">Selamat Datang di GigaTread</span>
+                <h1>Solusi Ban Terbaik <span>Untuk Mobil Anda</span></h1>
+                <p>Kunjungi toko fisik kami untuk mendapatkan pelayanan langsung dari mekanik profesional. Tersedia pilihan ban terlengkap dari berbagai merek dunia.</p>
+                <div class="hero-buttons">
+                    <a href="#produk" class="btn-primary">Lihat Produk</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- ========================================================
+         TOMBOL AI CHATBOT MELAYANG DENGAN PERTANYAAN KLASIK
+         ======================================================== -->
+    <div class="ai-chat-widget">
+        <!-- Tombol Utama Melayang -->
+        <button class="ai-chat-btn" id="aiChatBtn">
+            🤖 <span class="ai-badge">Tanya AI</span>
+        </button>
+
+        <!-- Kotak Chatbox -->
+        <div class="ai-chatbox hidden" id="aiChatbox">
+            <div class="ai-chatbox-header">
+                <div class="ai-bot-avatar">🤖</div>
+                <div>
+                    <h4>GigaTread AI Assistant</h4>
+                    <span class="ai-status">Online - Siap Membantu</span>
+                </div>
+                <button class="ai-close-btn" id="aiCloseBtn">&times;</button>
+            </div>
+            
+            <div class="ai-chatbox-body" id="aiChatBody">
+                <div class="ai-message bot">
+                    Halo! Saya asisten pintar GigaTread. Silakan klik salah satu pertanyaan klasik di bawah ini untuk jawaban instan, atau ketik pertanyaan Anda sendiri:
+                </div>
+                
+                <!-- KOTAK PILIHAN PERTANYAAN KLASIK -->
+                <div class="ai-quick-replies" id="aiQuickReplies">
+                    <button onclick="pilihPertanyaan('Jam Operasional', 'Jam berapa toko buka dan tutup?')">🕒 Jam Operasional</button>
+                    <button onclick="pilihPertanyaan('Fasilitas Gratis', 'Dapat bonus gratis apa saja kalau beli ban di sini?')">✨ Bonus & Fasilitas Gratis</button>
+                    <button onclick="pilihPertanyaan('Lokasi Toko', 'Di mana alamat lengkap tokonya?')">📍 Lokasi Bengkel</button>
+                    <button onclick="pilihPertanyaan('Cara Pesan', 'Bagaimana cara memesan ban di website ini?')">🛒 Cara Memesan Ban</button>
+                </div>
+            </div>
+            
+            <div class="ai-chatbox-footer">
+                <input type="text" id="aiInput" placeholder="Tulis pertanyaan Anda di sini...">
+                <button id="aiSendBtn">Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT UNTUK MENGHIDUPKAN TOMBOL CHAT AI & JAWABAN OTOMATIS -->
+    <script>
+        const chatBtn = document.getElementById('aiChatBtn');
+        const chatbox = document.getElementById('aiChatbox');
+        const closeBtn = document.getElementById('aiCloseBtn');
+        const sendBtn = document.getElementById('aiSendBtn');
+        const aiInput = document.getElementById('aiInput');
+        const aiChatBody = document.getElementById('aiChatBody');
+        const quickReplies = document.getElementById('aiQuickReplies');
+
+        // Buka-tutup kotak chat saat tombol robot diklik
+        chatBtn.addEventListener('click', () => {
+            chatbox.classList.toggle('hidden');
+        });
+
+        // Tutup kotak chat saat tombol silang (x) diklik
+        closeBtn.addEventListener('click', () => {
+            chatbox.classList.add('hidden');
+        });
+
+        // Fungsi ketika konsumen mengklik salah satu tombol pertanyaan klasik
+        function pilihPertanyaan(kunci, teksTampilkan) {
+            // Tampilkan pertanyaan pilihan user ke dalam chat room
+            tampilkanPesanUser(teksTampilkan);
+            
+            // AI memproses jawaban otomatis berdasarkan tombol yang diklik
+            setTimeout(() => {
+                let balasanBot = "";
+                
+                if (kunci === 'Jam Operasional') {
+                    balasanBot = "🕒 GigaTread buka setiap hari!\n• Senin - Jumat: 08.00 - 17.00 WIB\n• Sabtu - Minggu: 08.00 - 15.00 WIB\nSilakan datang ke bengkel kami pada jam tersebut untuk pemasangan langsung.";
+                } else if (kunci === 'Fasilitas Gratis') {
+                    balasanBot = "✨ Setiap pembelian ban baru di GigaTread, Anda otomatis mendapatkan:\n1. Gratis Ongkos Pasang oleh mekanik profesional\n2. Gratis Isi Nitrogen selamanya\n3. Gratis Balancing Pelek agar setir tetap stabil.";
+                } else if (kunci === 'Lokasi Toko') {
+                    balasanBot = "📍 Bengkel fisik kami beralamat di: Jl. Otomotif Raya No. 12, Jakarta. Anda juga bisa melihat rute navigasi akurat langsung melalui peta Google Maps interaktif di bagian bawah website ini.";
+                } else if (kunci === 'Cara Pesan') {
+                    balasanBot = "🛒 Cara pesan sangat mudah!\n1. Gulir ke atas ke bagian Katalog Ban Terlaris\n2. Pilih merek ban yang cocok untuk mobil Anda\n3. Klik tombol 'BELI' oranye di samping harga, dan Anda akan langsung terhubung dengan admin kami untuk konfirmasi pemasangan.";
+                }
+
+                tampilkanPesanBot(balasanBot);
+            }, 800);
+        }
+
+        // Fungsi kirim manual lewat tombol ketik
+        function kirimPesanManual() {
+            const teks = aiInput.value.trim();
+            if (teks === '') return;
+
+            tampilkanPesanUser(teks);
+            aiInput.value = '';
+
+            setTimeout(() => {
+                let balasanBot = "Terima kasih atas pertanyaannya! Untuk konsultasi mendalam mengenai ukuran pelek dan kesesuaian ban mobil Anda, silakan klik tombol 'PESAN SEKARANG' di dekat peta lokasi untuk langsung tersambung ke WhatsApp tim teknis kami.";
+                
+                if (teks.toLowerCase().includes('jam') || teks.toLowerCase().includes('buka') || teks.toLowerCase().includes('tutup')) {
+                    balasanBot = "🕒 Toko kami buka Senin-Jumat (08.00-17.00) dan Sabtu-Minggu (08.00-15.00).";
+                } else if (teks.toLowerCase().includes('gratis') || teks.toLowerCase().includes('bonus') || teks.toLowerCase().includes('nitrogen')) {
+                    balasanBot = "✨ Pembelian ban sudah termasuk gratis pasang, balancing, dan nitrogen selamanya!";
+                } else if (teks.toLowerCase().includes('alamat') || teks.toLowerCase().includes('lokasi') || teks.toLowerCase().includes('dimana')) {
+                    balasanBot = "📍 Lokasi kami di Jl. Otomotif Raya No. 12, Jakarta. Cek Google Maps di bawah untuk rute lengkap.";
+                }
+
+                tampilkanPesanBot(balasanBot);
+            }, 800);
+        }
+
+        function tampilkanPesanUser(teks) {
+            const userMsg = document.createElement('div');
+            userMsg.className = 'ai-message user';
+            userMsg.textContent = teks;
+            aiChatBody.appendChild(userMsg);
+            aturScroll();
+        }
+
+        function tampilkanPesanBot(teks) {
+            const botMsg = document.createElement('div');
+            botMsg.className = 'ai-message bot';
+            botMsg.style.whiteSpace = 'pre-line'; // Biar teks enter/baris baru rapi
+            botMsg.textContent = teks;
+            aiChatBody.appendChild(botMsg);
+            aturScroll();
+        }
+
+        function aturScroll() {
+            // Membawa scroll otomatis ke bagian pesan paling baru
+            aiChatBody.scrollTop = aiChatBody.scrollHeight;
+        }
+
+        sendBtn.addEventListener('click', kirimPesanManual);
+        aiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') kirimPesanManual();
+        });
+    </script>
+
+    <!-- KATALOG PRODUK POPULER -->
+    <section id="produk" class="section-produk">
+        <div class="section-header">
+            <h2>Produk Ban Terlaris</h2>
+            <p>Pilihan ban paling banyak dicari dengan performa terbaik di segala medan jalan.</p>
+        </div>
+
+        
+        <div class="grid-produk">
+            <!-- Produk 1 -->
+            <div class="card-produk">
+                <div class="card-image-box">
+                    <img src="assets/ban1.jpg" alt="Ban Sport">
+                    <span class="badge-diskon">Diskon 10%</span>
+                </div>
+                <div class="card-body">
+                    <span class="brand-tag">Michelin</span>
+                    <h3>Pilot Sport 4S</h3>
+                    <p>Cocok untuk mobil sport dan sedan premium yang butuh kendali tinggi.</p>
+                    <div class="card-footer">
+                        <div class="harga-box">
+                            <span class="harga-coret">Rp 2.100.000</span>
+                            <span class="harga-asli">Rp 1.890.000</span>
+                        </div>
+                        <!-- Tombol Beli Baru -->
+                        <a href="#" class="btn-beli-produk">BELI</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="card-produk">
+                <div class="card-image-box">
+                    <img src="assets/ban2.jpg" alt="Ban SUV">
+                </div>
+                <div class="card-body">
+                    <span class="brand-tag">Bridgestone</span>
+                    <h3>Ecopia EP150</h3>
+                    <p>Ban ramah lingkungan yang awet dan bikin konsumsi bbm lebih irit.</p>
+                    <div class="card-footer">
+                        <div class="harga-box">
+                            <span class="harga-asli">Rp 850.000</span>
+                        </div>
+                        <!-- Tombol Beli Baru -->
+                        <a href="#" class="btn-beli-produk">BELI</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="card-produk">
+                <div class="card-image-box">
+                    <img src="assets/ban3.jpg" alt="Ban Offroad">
+                </div>
+                <div class="card-body">
+                    <span class="brand-tag">Dunlop</span>
+                    <h3>Grandtrek AT3</h3>
+                    <p>Tangguh untuk jalanan berbatu, tanah miring, maupun aspal kota.</p>
+                    <div class="card-footer">
+                        <div class="harga-box">
+                            <span class="harga-asli">Rp 1.250.000</span>
+                        </div>
+                        <!-- Tombol Beli Baru -->
+                        <a href="#" class="btn-beli-produk">BELI</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="card-produk">
+                <div class="card-image-box">
+                    <img src="assets/ban4.jpg" alt="Ban Premium">
+                </div>
+                <div class="card-body">
+                    <span class="brand-tag">Pirelli</span>
+                    <h3>Cinturato P7</h3>
+                    <p>Kombinasi sempurna antara keamanan, kenyamanan, dan performa tinggi.</p>
+                    <div class="card-footer">
+                        <div class="harga-box">
+                            <span class="harga-asli">Rp 1.650.000</span>
+                        </div>
+                        <!-- Tombol Beli Baru -->
+                        <a href="#" class="btn-beli-produk">BELI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOX HUBUNGI KAMI + GOOGLE MAPS -->
+    <section id="kontak" class="section-kontak">
+        <div class="cta-box">
+            <div class="cta-text">
+                <h2>Pesan Ban Pilihan Anda Sekarang</h2>
+                <p>Silakan klik tombol di bawah untuk melakukan pemesanan instan atau kunjungi langsung bengkel kami sesuai rute maps di samping.</p>
+                <div class="info-list" style="margin-bottom: 25px;">
+                    <div style="margin-bottom: 12px;">📍 <strong>Alamat Toko:</strong> Jl. Otomotif Raya No. 12, Jakarta</div>
+                    <div style="margin-bottom: 16px;">🕒 <strong>Jam Buka:</strong> Senin - Minggu (08.00 - 17.00)</div>
+                </div>
+                <!-- Tombol Pesan Sekarang -->
+                <a href="#" class="btn-pesan-big">PESAN SEKARANG</a>
+            </div>
+            
+            <div class="map-container">
+                <!-- Sudah Menggunakan Iframe Google Maps Asli Milikmu -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3963.323952364856!2d108.38666307475397!3d-6.606606993387336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzYnMjMuOCJTIDEwOMKwMjMnMjEuMyJF!5e0!3m2!1sid!2sid!4v1781231729597!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         MEGA FOOTER BARU (LENGKAP & PROFESIONAL)
+         ======================================================== -->
+    <footer class="mega-footer">
+        <div class="footer-container">
+            <!-- Kolom 1: Tentang Toko -->
+            <div class="footer-column brand-info">
+                <h3>GIGA<span>TREAD</span></h3>
+                <p>Spesialis penyedia ban mobil berkualitas tinggi dan bergaransi resmi. Kami berkomitmen memberikan keselamatan terbaik untuk setiap perjalanan Anda.</p>
+            </div>
+
+            <!-- Kolom 2: Tautan Menu Cepat -->
+            <div class="footer-column">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#produk">Katalog Ban</a></li>
+                    <li><a href="#kontak">Hubungi Kami</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3: Jam Operasional Lengkap -->
+            <div class="footer-column">
+                <h4>Jam Operasional</h4>
+                <ul>
+                    <li>Senin - Jumat: 08.00 - 17.00</li>
+                    <li>Sabtu - Minggu: 08.00 - 15.00</li>
+                    <li>Hari Libur Nasional: Tutup</li>
+                </ul>
+            </div>
+
+            <!-- Kolom 4: Layanan Gratis -->
+            <div class="footer-column">
+                <h4>Fasilitas Gratis</h4>
+                <ul>
+                    <li>✨ Gratis Pasang Ban Baru</li>
+                    <li>🎈 Gratis Isi Nitrogen Selamanya</li>
+                    <li>⚖️ Gratis Balancing Pelek</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bagian Paling Bawah: Hak Cipta (Copyright) -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 GigaTread Indonesia. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

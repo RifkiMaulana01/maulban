@@ -1,0 +1,729 @@
+/* ========================================================
+   FULL CODE CSS - TEMA OTOMOTIF & BAN (RACING ASPHALT)
+   ======================================================== */
+
+/* --- 1. RESET & STYLE DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #1e293b;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+}
+
+/* --- 2. MENU ATAS (NAVIGASI) --- */
+nav {
+    background-color: #090d16;
+    border-bottom: 3px solid #ea580c;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0 2rem;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ea580c;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+.menu-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-links a:hover {
+    color: #ea580c;
+}
+
+.menu-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ea580c;
+    transition: width 0.3s ease;
+}
+
+.menu-links a:hover::after {
+    width: 100%;
+}
+
+.btn-nav {
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+    transition: all 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+}
+
+/* --- 3. BANNER UTAMA (HERO SECTION) --- */
+header {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    background: linear-gradient(90deg, #0f172a 35%, rgba(15, 23, 42, 0.5) 100%), 
+                url('assets/toko.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tagline {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #ea580c;
+    padding: 6px 14px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #ea580c;
+}
+
+.hero-content p {
+    color: #cbd5e1;
+    font-size: 16px;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(234, 88, 12, 0.3);
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #c2410c;
+    transform: translateY(-2px);
+}
+
+/* --- 4. KATALOG PRODUK BAN --- */
+.section-produk {
+    padding: 100px 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px auto;
+}
+
+.section-header h2 {
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+.grid-produk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.card-produk {
+    background-color: #111827;
+    border: 2px solid #1f2937;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card-produk:hover {
+    border-color: #ea580c;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(234, 88, 12, 0.15);
+}
+
+.card-image-box {
+    background-color: #0b0f19;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #1f2937;
+    height: 240px;
+    overflow: hidden;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.4s;
+}
+
+.card-produk:hover .card-image-box img {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.badge-diskon {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: #ef4444;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    z-index: 5;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.brand-tag {
+    font-size: 12px;
+    font-weight: 900;
+    color: #ea580c;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.card-body h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 5px 0 12px 0;
+}
+
+.card-body p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 24px;
+    height: 42px;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 2px solid #1f2937;
+}
+
+.harga-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.harga-coret {
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: line-through;
+}
+
+.harga-asli {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+/* GAYA TOMBOL BELI BARU */
+.btn-beli-produk {
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 4px 10px rgba(234, 88, 12, 0.2);
+}
+
+.btn-beli-produk:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+}
+
+/* --- 5. BOX HUBUNGI KAMI & GOOGLE MAPS --- */
+.section-kontak {
+    padding: 20px 2rem 100px 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #111827 0%, #030712 100%);
+    border: 2px solid #ea580c;
+    border-radius: 16px;
+    padding: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cta-text h2 {
+    font-size: 34px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.cta-text p {
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.info-list {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+/* GAYA TOMBOL PESAN BESAR BARU */
+.btn-pesan-big {
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 18px 36px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(234, 88, 12, 0.2);
+    transition: all 0.3s;
+}
+
+.btn-pesan-big:hover {
+    background-color: #c2410c;
+    transform: translateY(-3px);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(234, 88, 12, 0.5);
+}
+
+/* --- 7. DESAIN AI CHATBOT TERBARU DI STYLE.CSS --- */
+.ai-chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.ai-chat-btn {
+    background-color: #ea580c; /* Oranye balap */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(234, 88, 12, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.ai-chat-btn:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+}
+
+.ai-badge {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+
+/* Kotak Chatbox */
+.ai-chatbox {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    height: 450px;
+    background-color: #111827;
+    border: 2px solid #ea580c;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.ai-chatbox.hidden {
+    display: none;
+}
+
+.ai-chatbox-header {
+    background-color: #090d16;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #1f2937;
+    position: relative;
+}
+
+.ai-bot-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ea580c;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.ai-chatbox-header h4 {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.ai-status {
+    font-size: 11px;
+    color: #25d366; /* Warna Hijau aktif */
+}
+
+.ai-close-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Isi Percakapan Obrolan */
+.ai-chatbox-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ai-message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.ai-message.bot {
+    background-color: #1f2937;
+    color: #f8fafc;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.ai-message.user {
+    background-color: #ea580c;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* Kolom Input Bawah */
+.ai-chatbox-footer {
+    padding: 12px;
+    background-color: #090d16;
+    border-top: 1px solid #1f2937;
+    display: flex;
+    gap: 8px;
+}
+
+.ai-chatbox-footer input {
+    flex: 1;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+}
+
+.ai-chatbox-footer input:focus {
+    border-color: #ea580c;
+}
+
+.ai-chatbox-footer button {
+    background-color: #ea580c;
+    color: white;
+    border: none;
+    padding: 0 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.ai-chatbox-footer button:hover {
+    background-color: #c2410c;
+}
+
+/* Penyesuaian otomatis di layar smartphone */
+@media (max-width: 480px) {
+    .ai-chatbox {
+        width: 300px;
+        height: 400px;
+        bottom: 60px;
+    }
+}
+/* --- CSS DESAIN TOMBOL PERTANYAAN KLASIK AI --- */
+.ai-quick-replies {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.ai-quick-replies button {
+    background-color: #1f2937;
+    color: #f8fafc;
+    border: 1px solid #ea580c; /* Bingkai oranye balap */
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ai-quick-replies button:hover {
+    background-color: #ea580c;
+    color: white;
+    transform: translateX(3px); /* Efek bergeser sedikit saat disentuh */
+}
+
+/* --- 6. FOOTER --- */
+/* --- 6. MEGA FOOTER BARU DI STYLE.CSS --- */
+.mega-footer {
+    background-color: #050b14; /* Hitam arang eksklusif */
+    border-top: 3px solid #ea580c; /* Garis oranye sirkuit pembatas */
+    padding: 60px 2rem 20px 2rem;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Membagi jadi 4 kolom sejajar */
+    gap: 3rem;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #1f2937;
+}
+
+.footer-column h3 {
+    font-size: 24px;
+    font-weight: 900;
+    color: #ea580c;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.footer-column h3 span {
+    color: #ffffff;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Garis dekorasi oranye kecil di bawah judul kolom */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 30px;
+    height: 2px;
+    background-color: #ea580c;
+}
+
+.footer-column p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #94a3b8;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ea580c; /* Berubah oranye saat didekati kursor */
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 25px;
+    text-align: center;
+    color: #4b5563;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Penyesuaian otomatis agar rapi saat dibuka di HP */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Berubah jadi susunan ke bawah saat di HP */
+        gap: 2rem;
+    }
+}
+
+/* --- 7. RESPONSIVE LAYOUT --- */
+@media (max-width: 992px) {
+    .menu-links, .btn-nav {
+        display: none;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .cta-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .map-container {
+        max-width: 100%;
+        height: 250px;
+        margin-top: 20px;
+    }
+    .btn-pesan-big {
+        width: 100%;
+        justify-content: center;
+    }
+}
